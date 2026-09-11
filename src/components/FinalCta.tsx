@@ -58,7 +58,7 @@ export function FinalCta() {
         whileInView={{ opacity: 1, rotate: -2 }}
         viewport={{ once: true }}
         transition={{ duration: 1.1, ease }}
-        className="pointer-events-none absolute -left-2 top-0 z-[6] h-full w-[34vw] max-w-[150px] object-contain object-left mix-blend-multiply sm:-left-12 sm:w-[38vw] sm:max-w-[300px] lg:-left-16 lg:z-50 lg:w-[30vw] lg:max-w-[460px]"
+        className="pointer-events-none absolute -left-2 top-0 z-[6] h-[54svh] w-[42vw] max-w-[170px] object-contain object-left-top mix-blend-multiply sm:-left-12 sm:h-full sm:w-[38vw] sm:max-w-[300px] lg:-left-16 lg:z-50 lg:w-[30vw] lg:max-w-[460px]"
       />
       <motion.img
         src={collageFinalRight}
@@ -69,10 +69,10 @@ export function FinalCta() {
         whileInView={{ opacity: 1, rotate: 2 }}
         viewport={{ once: true }}
         transition={{ duration: 1.1, ease }}
-        className="pointer-events-none absolute -right-2 top-0 z-[6] h-full w-[34vw] max-w-[150px] object-contain object-right mix-blend-multiply sm:-right-12 sm:w-[38vw] sm:max-w-[300px] lg:-right-16 lg:z-50 lg:w-[30vw] lg:max-w-[460px]"
+        className="pointer-events-none absolute -right-2 top-0 z-[6] h-[54svh] w-[42vw] max-w-[170px] object-contain object-right-top mix-blend-multiply sm:-right-12 sm:h-full sm:w-[38vw] sm:max-w-[300px] lg:-right-16 lg:z-50 lg:w-[30vw] lg:max-w-[460px]"
       />
 
-      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center px-2 text-center sm:px-8 md:mt-[17%]">
+      <div className="relative z-10 mx-auto mt-[50svh] flex max-w-2xl flex-col items-center px-2 text-center sm:px-8 md:mt-[17%]">
         <motion.span
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
