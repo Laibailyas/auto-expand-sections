@@ -209,7 +209,7 @@ export function ChooseCause() {
                       </div>
                     </motion.div>
                   ) : (
-                    <motion.div key="closed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pointer-events-none absolute inset-x-0 bottom-5 z-20 flex justify-center md:bottom-8">
+                    <motion.div key="closed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pointer-events-none absolute inset-x-0 inset-y-0 z-20 flex items-center justify-center md:inset-y-auto md:bottom-8">
                       <span className="font-display text-2xl uppercase md:[writing-mode:vertical-rl] md:rotate-180">{item.short}</span>
                     </motion.div>
                   )}
