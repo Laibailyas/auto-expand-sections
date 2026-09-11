@@ -4,7 +4,7 @@ import { SunShape } from "./InstallSun";
 import logo from "@/assets/logo.png";
 
 const DURATION = 1400; // ms it takes the counter to fill on a fast load
-const MIN_VISIBLE = 1500; // keep the curtain up at least this long
+
 const EXIT = 600; // fade-out duration
 
 /**
@@ -41,7 +41,7 @@ export function Preloader() {
 
     const tick = (now: number) => {
       if (!start.current) start.current = now;
-      const elapsed = now - start.current Grades;
+      const elapsed = now - start.current;
       const p = Math.min(1, elapsed / DURATION);
       // Ease-out so the counter rushes early and lingers near 100.
       const eased = 1 - Math.pow(1 - p, 3);
