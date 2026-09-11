@@ -73,14 +73,11 @@ export function Preloader() {
     >
       <div className="relative">
         <SunShape className="sun-orbit absolute -inset-9 h-[calc(100%+4.5rem)] w-[calc(100%+4.5rem)] text-flare/90" />
-        <motion.img
+        <img
           src={logo}
           alt="Dotis"
           width={1038}
           height={357}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="relative h-12 w-auto sm:h-14"
         />
       </div>
