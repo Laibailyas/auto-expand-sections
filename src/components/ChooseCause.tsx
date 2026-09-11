@@ -142,7 +142,13 @@ export function ChooseCause() {
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/10 to-ink/20" />
 
-                <div className="pointer-events-none absolute left-4 top-4 z-20 flex items-center gap-3 md:left-5 md:top-5">
+                <div
+                  className={`pointer-events-none absolute z-20 flex items-center gap-3 ${
+                    isActive
+                      ? "left-4 top-4 md:left-5 md:top-5"
+                      : "left-4 top-1/2 -translate-y-1/2 md:left-5 md:top-5 md:translate-y-0"
+                  }`}
+                >
                   <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-full ${isActive ? "bg-flare" : "bg-paper/90"}`}>
                     <Icon className={`h-5 w-5 ${isActive ? "text-paper" : "text-ink"}`} />
                   </span>
@@ -177,7 +183,7 @@ export function ChooseCause() {
                           <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper/80 md:text-base">{item.blurb}</p>
                           <div className="mt-5 flex flex-wrap gap-2">
                             {item.charities.map((name) => (
-                              <span key={name} className="border border-paper/30 bg-ink/35 px-3 py-1.5 text-xs backdrop-blur-sm">{name}</span>
+                              <span key={name} className="whitespace-nowrap border border-paper/30 bg-ink/35 px-2 py-1 text-[0.6rem] tracking-wide backdrop-blur-sm sm:px-3 sm:py-1.5 sm:text-xs sm:tracking-normal">{name}</span>
                             ))}
                           </div>
                         </div>
