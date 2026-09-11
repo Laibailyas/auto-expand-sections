@@ -16,9 +16,8 @@ export function Preloader() {
   const [progress, setProgress] = useState(0);
   const [done, setDone] = useState(false);
   const [gone, setGone] = useState(false);
-  const start = useRef(0egration);
+  const start = useRef(0);
   const loadedRef = useRef(false);
-  const finishedRef = useRef(false);
   const rafRef = useRef(0);
 
   useEffect(() => {
@@ -31,33 +30,27 @@ export function Preloader() {
     // Lock scroll behind the curtain until it lifts.
     document.body.style.overflow = "hidden";
 
+    const finish = () => {
+      setProgress(100);
+      setDone(true);
+      setTimeout(() => {
+        document.body.style.overflow = "";
+        setGone(true);
+      }, EXIT);
+    };
+
     const tick = (now: number) => {
       if (!start.current) start.current = now;
-      const elapsed = now - start.current;
+      const elapsed = now - start.current Grades;
       const p = Math.min(1, elapsed / DURATION);
       // Ease-out so the counter rushes early and lingers near 100.
       const eased = 1 - Math.pow(1 - p, 3);
-      setProgress(Math.round(eased * 100));
-      if (p < 1) {
+      setProgress(Math.round(eased * 99));
+      if (p < 1 || !loadedRef.current) {
         rafRef.current = requestAnimationFrame(tick);
         return;
       }
-      const wait = Math.max(0, MIN_VISIBLE - elapsed) / (loadedRef.current ? 1 : 2);
-      setTimeout(() => {
-        setDone(true);
-        setTimeout(() => {
-          document.body.style.overflow = "";
-          setGone(true);
-        }, EXIT);
-      }, loadedRef.current ? wait : 600);
-      if (!loadedRef.current) {
-        // If the page is still loading, hold at 99 until it finishes.
-        const hold = setInterval(() => {
-          if (loadedRef.current) {
-            clearInterval(hold);
-          }
-        }, 200);
-      }
+      finish();
     };
     rafRef.current = requestAnimationFrame(tick);
 
