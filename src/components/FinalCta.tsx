@@ -72,7 +72,7 @@ export function FinalCta() {
         className="pointer-events-none absolute -right-2 top-0 z-[6] h-[54svh] w-[42vw] max-w-[170px] object-contain object-right-top mix-blend-multiply sm:-right-12 sm:h-full sm:w-[38vw] sm:max-w-[300px] lg:-right-16 lg:z-50 lg:w-[30vw] lg:max-w-[460px]"
       />
 
-      <div className="relative z-10 mx-auto mt-[38svh] flex max-w-2xl flex-col items-center px-2 text-center sm:px-8 md:mt-[17%]">
+      <div className="relative z-10 mx-auto mt-[45svh] flex max-w-2xl flex-col items-center px-2 text-center sm:px-8 md:mt-[17%]">
         <motion.span
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
