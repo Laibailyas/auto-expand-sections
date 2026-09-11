@@ -74,8 +74,11 @@ export function InstallSun({ anchorRef }: { anchorRef: RefObject<HTMLElement | n
     let ctaProgress = 0;
     if (ctaEl) {
       const ctaRect = ctaEl.getBoundingClientRect();
-      const startAt = window.innerHeight * 0.95;
-      const endAt = window.innerHeight * 0.1;
+      // Mobile: bloom starts while the FAQs are still on screen and finishes
+      // the moment the section enters — the sun opens "by itself" instead of
+      // being driven by scrolling through the last section.
+      const startAt = isMobile ? window.innerHeight * 1.6 : window.innerHeight * 0.95;
+      const endAt = isMobile ? window.innerHeight * 1.1 : window.innerHeight * 0.1;
       ctaProgress = clamp01((startAt - ctaRect.top) / (startAt - endAt));
     }
 
@@ -90,7 +93,7 @@ export function InstallSun({ anchorRef }: { anchorRef: RefObject<HTMLElement | n
         : Math.min(window.innerWidth * 0.85, window.innerHeight * 1.7);
       const bigX = window.innerWidth / 2 - bigSize / 2;
       const bigY = isMobile
-        ? window.innerHeight * 0.48 - bigSize / 2
+        ? window.innerHeight * 0.5 - bigSize / 2
         : window.innerHeight - bigSize / 2;
       finalSize = lerp(finalSize, bigSize, ctaProgress);
       finalX = lerp(finalX, bigX, ctaProgress);
